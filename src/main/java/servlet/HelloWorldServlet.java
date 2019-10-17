@@ -6,22 +6,19 @@ import javax.servlet.http.*;
 
 public class HelloWorldServlet extends HttpServlet {
 
-    private String message;
-
-    public void init() throws ServletException {
-        message = "Hello World";
-    }
-
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("text/html");
-
         PrintWriter out = response.getWriter();
-        out.println("<h1>" + message + "</h1>");
-    }
 
-    public void destroy() {
-        // do nothing.
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Hello World!</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>Hello World!</h1>");
+        out.println("</body>");
+        out.println("</html>");
     }
 }
